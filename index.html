@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private music</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+<div class="box">
+    <!--头部-->
+    <header>
+        <div class="container">
+            <h3 class="left">Mr.Liu's private music</h3>
+            <p class="right">By - Mr.Liu</p>
+        </div>
+    </header>
+    <!--主体部分-->
+    <section>
+        <div class="container">
+            <input type="text" class="search">
+            <ul class="searchUl"></ul>
+        </div>
+    </section>
+    <!--控制条-->
+    <footer>
+        <div class="container">
+            <!--播放按键-->
+            <div class="btns left">
+                <div class="prev left"></div>
+                <div class="start left"></div>
+                <div class="next left"></div>
+            </div>
+            <!--进度条-->
+            <div class="bars left">
+                <div class="left logo">
+                    <img src="" alt="">
+                </div>
+            <div class="left ctrl-bars-box">
+                <p>
+                    <span></span>
+                </p>
+
+                <div class="ctrl-bars">
+                    <div class="nowBars"></div>
+                    <div class="ctrl-btn">
+                        <div class="ctrl-btn-small"></div>
+                    </div>
+                </div>
+            </div>
+                <div class="left times">
+                    <span class="nowTime">00:00</span>
+                    /
+                    <span class="totalTime">00:00</span>
+                </div>
+            </div>
+            <!--音量，模式-->
+            <div class="left  modes">
+                <div class="left voice"></div>
+                <div class="left mode"></div>
+                <div class="left play-list"></div>
+            </div>
+        </div>
+        <div class="play-list-box">
+            <div class="list-header">
+                <!--播放列表-->
+            </div>
+            <ul></ul>
+        </div>
+    </footer>
+    <div class="songs_cnt">
+        <ul class="songs_list">
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="sel_song">歌<br/><br/>词</button>
+    </div>
+    <div id="gc">
+        <ul></ul>
+    </div>
+</div>
+<audio></audio>
+<div class="mack"></div>
+<div class="info"></div>
+</body>
+<!--背景-->
+<canvas></canvas>
+<script  src="js/background.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var flag = false;
+    $('.play-list').on('click',function () {
+        flag = !flag;
+        if (flag) {
+            $('.play-list-box').animate({
+                bottom: 46
+            }, 300);
+        } else {
+            $('.play-list-box').animate({
+                bottom:-300
+            }, 300);
+        }
+    })
+</script>
+</html>
